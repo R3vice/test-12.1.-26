@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknologi Audio Terbaru - Harmoni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #64FFDA;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            margin-right: 5px;
+            font-size: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #64FFDA;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64FFDA;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .article-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+        }
+        
+        .article-header h1 {
+            font-size: 36px;
+            color: #64FFDA;
+            margin-bottom: 15px;
+        }
+        
+        .article-meta {
+            color: #CCD6F6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .article-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            color: #CCD6F6;
+        }
+        
+        .article-content h2 {
+            color: #64FFDA;
+            margin: 25px 0 15px;
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #64FFDA;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-content th {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64FFDA;
+        }
+        
+        .article-content tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #64FFDA;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .back-link span {
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .back-link:hover span {
+            transform: translateX(-5px);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64FFDA;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(100, 255, 218, 0.2);
+        }
+        
+        .nav-btn span {
+            margin: 0 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CCD6F6;
+        }
+        
+        /* Highlight box untuk fitur penting */
+        .feature-box {
+            background: rgba(100, 255, 218, 0.1);
+            border-left: 4px solid #64FFDA;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .feature-box h3 {
+            color: #64FFDA;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .article-container {
+                padding: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><span>♫</span>Mymusic</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        <a href="artikel.html" class="back-link"><span>←</span> Kembali ke Daftar Artikel</a>
+        
+        <article class="article-container">
+            <div class="article-header">
+                <h1>Teknologi Terbaru dalam Dunia Audio dan Musik</h1>
+                <div class="article-meta"></div>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Teknologi Audio Terbaru" class="article-image">
+            
+            <div class="article-content">
+                <p>Perkembangan teknologi terus membawa perubahan revolusioner dalam cara kita menikmati, menghasilkan, dan berinteraksi dengan musik. Dari headphones nirkabel hingga streaming lossless, inovasi terbaru dalam teknologi audio telah mengubah landscape industri musik secara signifikan dalam beberapa tahun terakhir.</p>
+                
+                <h2>Revolusi Audio Nirkabel</h2>
+                <p>Teknologi nirkabel telah mengubah cara kita mendengarkan musik. Dengan kemunculan Bluetooth 5.0 dan codec audio canggih seperti LDAC, aptX HD, dan AAC, kualitas audio nirkabel sekarang hampir menyamai kabel.</p>
+                
+                <div class="feature-box">
+                    <h3>Fitur Utama Headphone Modern</h3>
+                    <ul>
+                        <li><strong>Noise Cancellation</strong>: Teknologi ANC (Active Noise Cancellation) yang semakin canggih</li>
+                        <li><strong>Battery Life</strong>:
+Masa pakai baterai yang lebih lama, hingga 30 jam untuk beberapa model</li>
+                        <li><strong>Smart Features</strong>: Integrasi dengan asisten virtual seperti Siri, Google Assistant, dan Alexa</li>
+                    </ul>
+                </div>
+                
+                <h2>Audio Immersive: Spatial Audio dan 3D Sound</h2>
+                <p>Spatial Audio adalah teknologi terbaru yang menciptakan pengalaman mendengarkan yang imersif seperti di ruang konser. Dengan menggunakan algoritma canggih, teknologi ini mensimulasikan suara yang datang dari berbagai arah.</p>
+                
+                <blockquote>
+                    "Spatial Audio bukan hanya tentang mendengar musik, tetapi tentang mengalami musik dalam ruang tiga dimensi." - Dr. Emily Chen, Audio Engineer
+                </blockquote>
+                
+                <h2>High-Resolution Audio Streaming</h2>
+                <p>Layanan streaming musik kini menawarkan kualitas audio yang lebih tinggi daripada sebelumnya. Beberapa layanan bahkan menawarkan streaming lossless dengan kualitas hingga 24-bit/192kHz.</p>
+                
+                <table>
+                    <tr>
+                        <th>Layanan Streaming</th>
+                        <th>Kualitas Audio Tertinggi</th>
+                        <th>Harga/Bulan</th>
+                        <th>Fitur Unggulan</th>
+                    </tr>
+                    <tr>
+                        <td>Spotify</td>
+                        <td>320 kbps (Ogg Vorbis)</td>
+                        <td>Rp 54.900</td>
+                        <td>Rekomendasi playlist, Podcast</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Music</td>
+                        <td>Lossless (24-bit/192kHz)</td>
+                        <td>Rp 54.900</td>
+                        <td>Spatial Audio, Lossless</td>
+                    </tr>
+                    <tr>
+                        <td>Tidal</td>
+                        <td>HiFi (24-bit/192kHz)</td>
+                        <td>Rp 59.900</td>
+                        <td>Master Quality Authenticated</td>
+                    </tr>
+                    <tr>
+                        <td>Deezer</td>
+                        <td>HiFi (16-bit/44.1kHz)</td>
+                        <td>Rp 59.900</td>
+                        <td>Flow, Lyrics</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon Music HD</td>
+                        <td>Ultra HD (24-bit/192kHz)</td>
+                        <td>Rp 65.000</td>
+                        <td>Integrasi dengan Alexa</td>
+                    </tr>
+                </table>
+                
+                <h2>Kecerdasan Buatan dalam Produksi Musik</h2>
+                <p>AI telah membuka babak baru dalam produksi musik. Dari mastering otomatis hingga generasi musik, berikut adalah beberapa penerapan AI terkini:</p>
+                
+                <ol>
+                    <li><strong>AI Mastering</strong>: Layanan seperti LANDR menggunakan AI untuk melakukan proses mastering secara otomatis dengan hasil yang menakjubkan</li>
+                    <li><strong>Music Generation</strong>: Tools seperti OpenAI's Jukebox dapat menghasilkan musik dalam berbagai genre dan gaya</li>
+                    <li><strong>Vocal Processing</strong>: Plugin AI seperti iZotope's Nectar dapat memperbaiki dan meningkatkan kualitas vokal secara otomatis</li>
+                    <li><strong>Sample Recognition</strong>: AI dapat mengidentifikasi sample musik dan membantu dalam proses clearing copyright</li>
+                </ol>
+                
+                <h2>Teknologi Realitas Virtual (VR) dan Augmented Reality (AR)</h2>
+                <p>VR dan AR mulai digunakan untuk menciptakan pengalaman musik yang imersif. Konser virtual menjadi semakin populer, memungkinkan penggemar dari seluruh dunia untuk menghadiri pertunjukan secara virtual.</p>
+                
+                <div class="feature-box">
+                    <h3>Konser Virtual Terkenal</h3>
+                    <ul>
+                        <li>Fortnite x Travis Scott - ASTROWORLD (2020)</li>
+                        <li>Minecraft Festival - (2021)</li>
+                        <li>Wave VR - John Legend Virtual Concert (2021)</li>
+                        <li>Roblox - Lil Nas X Concert (2020)</li>
+                    </ul>
+                </div>
+                
+                <h2>Masa Depan Teknologi Audio</h2>
+                <p>Beberapa teknologi yang akan mengubah masa depan audio dan musik:</p>
+                
+                <ul>
+                    <li><strong>Bone Conduction Technology</strong>: Headphone yang mengirimkan suara melalui tulang tengkorak</li>
+                    <li><strong>Personalized Sound Profiles</strong>: Audio yang disesuaikan dengan bentuk telinga dan preferensi pendengaran individu</li>
+                    <li><strong>Haptic Feedback Integration</strong>: Teknologi yang memungkinkan merasakan musik melalui sensasi sentuhan</li>
+                    <li><strong>Brain-Computer Interfaces</strong>: Teknologi yang memungkinkan mengontrol musik dengan pikiran</li>
+                </ul>
+                
+                <p>Sumber: <a href="https://www.techinasia.com/trend-teknologi-audio-2023" style="color: #64FFDA;">Tech in Asia - Trend Teknologi Audio 2023</a>, <a href="https://www.musictech.net" style="color: #64FFDA;">MusicTech</a></p>
+            </div>
+            
+            <div class="nav-buttons">
+                <a href="artikel.html" class="nav-btn"><span>←</span> Kembali ke Daftar Artikel</a>
+                <a href="index.html" class="nav-btn">Ke Beranda <span>→</span></a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mymusic - Portal Musik Modern. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

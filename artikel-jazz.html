@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Jazz Indonesia - Mymusic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #64FFDA;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            margin-right: 5px;
+            font-size: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #64FFDA;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #64FFDA;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .article-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .article-header {
+            margin-bottom: 30px;
+        }
+        
+        .article-header h1 {
+            font-size: 36px;
+            color: #64FFDA;
+            margin-bottom: 15px;
+        }
+        
+        .article-meta {
+            color: #CCD6F6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .article-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            color: #CCD6F6;
+        }
+        
+        .article-content h2 {
+            color: #64FFDA;
+            margin: 25px 0 15px;
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #64FFDA;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-content th {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64FFDA;
+        }
+        
+        .article-content tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #64FFDA;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .back-link span {
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .back-link:hover span {
+            transform: translateX(-5px);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64FFDA;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(100, 255, 218, 0.2);
+        }
+        
+        .nav-btn span {
+            margin: 0 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CCD6F6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><span>♫</span>Mymusic</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        <a href="artikel.html" class="back-link"><span>←</span> Kembali ke Daftar Artikel</a>
+        
+        <article class="article-container">
+            <div class="article-header">
+                <h1>Sejarah dan Perkembangan Musik Jazz di Indonesia</h1>
+                <div class="article-meta"></div>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sejarah Musik Jazz" class="article-image">
+            
+            <div class="article-content">
+                <p>Jazz telah menjadi bagian penting dari perkembangan musik Indonesia sejak era 1930-an. Awalnya, musik jazz dibawa oleh musisi Filipina dan kemudian dikembangkan oleh musisi pribumi. <strong>Perkembangan jazz</strong> di Indonesia mengalami pasang surut seiring dengan perubahan politik dan sosial di tanah air.</p>
+                
+                <h2>Era Awal (1930-1960)</h2>
+                <p>Pada era ini, jazz mulai dikenal di kalangan terbatas, terutama di kota-kota besar seperti Jakarta, Surabaya, dan Bandung. Beberapa musisi pionir jazz Indonesia antara lain:</p>
+                
+                <ul>
+                    <li>Bill Saragih - Pemain piano legendaris</li>
+                    <li>Jack Lesmana - Kontrabassis dan komposer</li>
+                    <li>Benyamin Sueb - Yang juga membawa unsur jazz dalam musik gambang kromong</li>
+                </ul>
+
+                <h2>Era Emas (1960-1980)</h2>
+                <p>Pada periode ini, musik jazz di Indonesia mulai berbaur dengan genre lain, seperti pop, rock, dan musik tradisional. Jazz tidak hanya dimainkan di klub malam atau kalangan elit, tetapi juga mulai menjangkau audiens yang lebih luas. Munculnya kelompok musik seperti Krakatau, yang memadukan jazz dengan gamelan dan musik etnik Nusantara, menjadi tonggak penting dalam pencarian identitas jazz Indonesia. Selain itu, musisi seperti Kunto Aji, Idris Sardi, dan Mus Mujiono juga ikut memperkaya warna jazz di tanah air</p>
+                
+                <blockquote>
+                    "Jazz adalah musik yang hidup dan terus berevolusi, mencerminkan semangat zaman di mana ia dimainkan." - Jack Lesmana
+                </blockquote>
+                
+                <h2>Era Modern (1990-Sekarang)</h2>
+                <p>Setelah sempat meredup pada era 80-an, jazz kembali bangkit di Indonesia pada tahun 1990-an. Kemunculan <em>Java Jazz Festival</em> pada tahun 2005 menjadi titik penting dalam sejarah jazz Indonesia, yang menempatkan Indonesia di peta jazz internasional.</p>
+                
+                <h2> Jazz sebagai Identitas Kultural Indonesia </h2>
+                <p>Keunikan jazz di Indonesia terletak pada kemampuannya untuk beradaptasi dengan budaya lokal. Perpaduan jazz dengan musik tradisional Nusantara, seperti keroncong, gamelan, atau musik etnik daerah, menciptakan warna khas yang membedakan jazz Indonesia dari jazz di negara lain. Hal ini sekaligus menunjukkan bahwa jazz bukan sekadar musik impor, melainkan telah bertransformasi menjadi bagian dari identitas musik nasional.</p>
+                
+                <h2>Kolaborasi Internasional</h2>
+                <p> Jazz Indonesia semakin dikenal dunia melalui kolaborasi dengan musisi internasional. Banyak musisi asing tampil di panggung festival Indonesia, sekaligus membuka ruang pertukaran budaya. Musisi seperti Indra Lesmana dan Dewa Budjana bahkan beberapa kali bekerja sama dengan musisi jazz dunia, membawa nama Indonesia di kancah global.</p>
+                
+                <h2>Tantangan dan Harapan ke Depan</h2>
+                <p>Meski berkembang pesat, jazz di Indonesia tetap menghadapi tantangan, seperti minimnya dukungan industri rekaman besar dan dominasi musik populer di pasar. Namun, semangat komunitas, kreativitas musisi, serta dukungan festival dan platform digital membuat jazz tetap bertahan dan berkembang.
+Ke depan, perpaduan jazz dengan kekayaan musik tradisi Nusantara diyakini akan semakin memperkuat identitas jazz Indonesia di panggung dunia.</p>
+
+<p>Beberapa musisi jazz Indonesia modern yang terkenal:</p>
+                
+                <table>
+                    <tr>
+                        <th>Nama Musisi</th>
+                        <th>Instrumen</th>
+                        <th>Tahun Aktif</th>
+                    </tr>
+                    <tr>
+                        <td>Indra Lesmana</td>
+                        <td>Piano, Keyboard</td>
+                        <td>1980-sekarang</td>
+                    </tr>
+                    <tr>
+                        <td>Dwiki Dharmawan</td>
+                        <td>Piano, Keyboard</td>
+                        <td>1986-sekarang</td>
+                    </tr>
+                    <tr>
+                        <td>Barry Likumahuwa</td>
+                        <td>Bass</td>
+                        <td>2005-sekarang</td>
+                    </tr>
+                    <tr>
+                        <td>Tompi</td>
+                        <td>Vokal, Saxophone</td>
+                        <td>2000-sekarang</td>
+                    </tr>
+                </table>
+                
+            </div>
+            
+            <div class="nav-buttons">
+                <a href="artikel.html" class="nav-btn"><span>←</span> Kembali ke Daftar Artikel</a>
+                <a href="index.html" class="nav-btn">Ke Beranda <span>→</span></a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mymusic - Portal Musik Modern. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
